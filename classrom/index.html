@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="calculaterstyl.css">
+   
+</head>
+<body>
+    <header>
+
+    <!-- <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+    <script>
+       function playSound() {
+       const sound = document.getElementById("clickSound");
+       sound.currentTime = 0;
+       sound.play();
+            } 
+
+        function press(val) {
+        playSound();
+        document.querySelector(".inpt").value += val;
+          }
+    </script> -->
+
+
+
+        <div class="navbar">
+            <button class="history" onclick="toggleHisorty()"></button>
+            
+
+            <button class="menu" onclick="toggleMenu()"></button>
+            <div class="sidebar" id="sidebar">
+                <ul class="list" >
+                   <li onclick="goHome()">
+                         <span class="icon">🏠</span> Home
+                        </li>
+                   <li onclick="sic_fic()">
+                         <span class="icon">📱</span> Smart Cal
+                        </li>
+                   <li onclick="convertor()">
+                         <span class="icon">⇄</span> Convertor
+                        </li>
+                    <li onclick="toggleNotes()">
+                          <span class="icon">📝</span> Notes
+                        </li>
+
+                    <li onclick="clearHistory()">
+                           <span class="icon">🗑</span> Clear All
+                        </li>
+
+                    <li onclick="toggleTheme()">
+                             <span class="icon">🎨</span> Theme
+                         </li>
+                </ul>
+            </div>
+                
+            <div class="overlay" id="overlay" onclick="toggleMenu" ></div>
+
+           
+
+        </div>  
+        
+        <div class="mainbox">
+            <input type="text" class="inpt" readonly />
+           
+ <script>
+function toggleMenu() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+</script>
+
+           
+          <div class="calculator"> 
+
+  <div class="buttons">
+    <button id="clear" onclick="backspace()">.</button>
+    <button id="ca" onclick="clearDisplay()">AC</button>
+    <button id="percentage" onclick="press('%')">%</button>
+    <button id="divide"  onclick="press('/')">÷</button>
+
+    
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button id="multiplication"  onclick="press('*')">x</button>
+
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button  id="subtraction" onclick="press('-')">-</button>
+
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button id="addition" onclick="press('+')">+</button>
+     
+    <button onclick="sign()">+/-</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="press('0')">0</button>
+    <button id="equal" onclick="calculate()">=</button>
+
+
+   
+
+    
+     
+  </div>
+   <button class="notes-btn" onclick="toggleNotes()">notes</button>
+  <div class="notes-panel" id="notesPanel">
+                <textarea placeholder="Write your notes here..."></textarea>
+            </div>
+
+
+             <script>
+              function toggleNotes() {
+               const panel = document.getElementById("notesPanel");
+               panel.classList.toggle("active");
+              }
+            </script>
+    
+</div>
+
+
+
+           
+        
+    </header>
+
+    <footer>
+        <div id="lll">
+         <h6>....</h6>
+        </div>
+    </footer>
+    
+</body>
+</html>
