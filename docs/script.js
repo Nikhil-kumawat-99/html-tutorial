@@ -56,3 +56,53 @@ function toggleMenu() {
     sidebar.classList.toggle("active");
     overlay.classList.toggle("active");
 }
+
+
+function toggleHistory() {
+    const sidebar1 = document.getElementById("sidebar1");
+    const overlay1 = document.getElementById("overlay1");
+
+    sidebar1.classList.toggle("active");
+    overlay1.classList.toggle("active");
+}
+
+
+
+    // history
+    let history=[];
+
+    function calculate(){
+        playSound1();
+        try{
+            let expression=display.value;
+            let result = eval(expression);
+            display.value=result;
+            saveHistory( expression , result );
+        }
+        catch{
+            display.value="Error..!";
+        }
+    }
+
+    
+    function saveHistory( expression , result){
+        history.push( expression + "=" + result);
+        updateHistory();
+    }
+
+
+    function updateHistory(){
+        const historylist= document.getElementById("historyList");
+        historylist.innerHTML="";
+        for(let i=0; i<history.length; i++){
+            const li= document.createElement("li");
+            li.textContent=history[i];
+            historylist.appendChild(li);
+        }
+    }
+  
+
+    function clearHistory(){
+        history=[];
+        updateHistory();
+    }

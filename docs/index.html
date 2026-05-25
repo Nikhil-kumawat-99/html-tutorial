@@ -12,7 +12,27 @@
     <audio id="clicksound1" src="lucadialessandro-tap-notification-180637.mp3"></audio>
  <header>
         <div class="navbar">
-               <button class="history" onclick="toggleHisorty()"></button>
+               <button class="history" onclick="toggleHistory()"></button>
+
+
+
+
+
+                    <div class="sidebar1" id="sidebar1">
+                          <h2>History</h2>
+                          
+                          <ul id="historyList"></ul>
+
+                          <button id="clearhistory" onclick="clearHistory()">Clear History</button>
+                    </div>
+
+                     <div class="overlay1" id="overlay1" onclick="toggleHistory()" ></div> 
+                     
+                     
+
+
+
+        
                <button class="menu" onclick="toggleMenu()"></button>
             <div class="sidebar" id="sidebar">
                 <ul class="list" >
@@ -39,11 +59,10 @@
                 </ul>
             </div>
                 
-            <div class="overlay" id="overlay" onclick="toggleMenu" ></div>
-             
-           
+            <div class="overlay" id="overlay" onclick="toggleMenu" ></div>  
 
         </div>  
+
         
         
     <div class="mainbox">
