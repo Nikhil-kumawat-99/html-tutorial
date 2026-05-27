@@ -1,18 +1,34 @@
 *{
     margin:0;
-    border: border-box;
+    padding:0;
+    box-sizing: border-box;
 }
-body{
+/* body{
     background-image: url("tp244-bg4-05.jpg");
     background-size: cover;
+    background-position: center;
+
+} */
+ body{
+    width: 100%;
+    background-image: url("tp244-bg4-05.jpg");
+    background-size: cover;
+    background-position: center;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    /* padding: 10px; */
 }
-
-
 
 
 .navbar{
     display:flex;
-    width: 1300px;
+    width: 100%;
 
 }
 
@@ -73,28 +89,47 @@ body{
 }
    
 
-.mainbox{
-    /* display:flex; */
-     /* position: fixed; */
+/* .mainbox{
     margin-top: 30px;
     margin-left: 500px;
     width:500px;
     height:700px;
     text-align: center;
-    /* background-color: white transparent; */
     background-color:rgba(255,255,255,0.1);
 
     border: solid rgb(84, 91, 92) 2px;
     border-radius:5% ;
-    /* box-shadow: 0 15px 35px rgba(0,0,0,0.5); */
     box-shadow: 0 0 6px rgba(255,255,255,0.5);
 
     backdrop-filter: blur(10px);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
+} */
+.mainbox{
+    width: 100%;
+    max-width: 400px;
+
+    min-height: 650px;
+
+    text-align: center;
+
+    background-color:rgba(255,255,255,0.1);
+
+    border: solid rgb(84, 91, 92) 2px;
+    border-radius:25px;
+
+    box-shadow: 0 0 6px rgba(255,255,255,0.5);
+
+    backdrop-filter: blur(10px);
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    padding: 20px;
 }
 
-#display{
+
+
+/* #display{
     width:420px;
     height:100px;
     margin-top: 30px;
@@ -105,23 +140,59 @@ body{
     text-align: right;
     box-shadow: inset 2px 2px 10px rgba(0,0,0,0.6);
 
+} */
+
+#display{
+    width: 100%;
+    height: 90px;
+
+    margin-top: 30px;
+
+    background-color: rgb(139, 150, 151);
+
+    border: black solid 3px;
+
+    border-radius: 15px;
+
+    font-size: 2rem;
+
+    text-align: right;
+
+    padding-right: 10px;
+
+    box-sizing: border-box;
+    
+    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.6);
+}
+.buttons{
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+    align-items: center;
+     justify-items: center;
+     padding: 15px;
 }
 
 
 
-.buttons button {
+
+
+
+/* .buttons button {
   margin-top: 100px;
   align-items: center;
   width: 60px;
   height: 60px;
   margin: 20px;
   font-size: 20px;
-  /* background-color: rgb(84, 91, 92); */
   border-radius:30% ;
   border: solid rgb(84, 91, 92) 3px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 
-  /* background: #22223b; */
          background:   rgb(84, 91, 92);
 
    cursor: pointer;
@@ -130,7 +201,36 @@ body{
   box-shadow: 4px 4px 10px rgba(0,0,0,0.5),
               -2px -2px 6px rgba(255,255,255,0.05);
 
+} */
+.buttons button {
+
+  /* width: 100%; */
+  width: 60px;
+  height: 60px;
+  
+  padding: 10px;
+  aspect-ratio: 1/1;
+
+  font-size: 1.1rem;
+
+  border-radius:20px;
+
+  border: solid rgb(84, 91, 92) 3px;
+
+  background: rgb(84, 91, 92);
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  transition: all 0.2s ease;
+
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.5),
+              -2px -2px 6px rgba(255,255,255,0.05);
 }
+
+
+
 
 button:hover{
   border: 3px solid black ;
@@ -274,12 +374,13 @@ footer{
 
 /* sidebar */
 .sidebar{
+  align-items: right;
     top:0px;
     left:-300px;
     position:fixed;
-    width:200px;
+    width:250px;
     height:100%;
-    background-color:rgba(255,255,255,0.1);
+    background-color:rgba(255,255,255,0.4);
 
     /* background: #1e293b; */
     padding:20px;
@@ -294,7 +395,6 @@ footer{
 
 .sidebar ul {
    margin-right:0px ;
-   
    margin-top: 100px;
    font-size: 20px;
    list-style: none;
@@ -302,16 +402,19 @@ footer{
 }
 
 .sidebar ul li {
+  list-style: none;
   font-weight: normal;
-  padding: 20px;
+  padding: 15px 10px;
   height: 20px;
-  align-items: left;
+  
   margin-left:30px ;
   margin: 20px 0;
   /* background: #334155; */
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
 }
 
 .list li:hover{
@@ -410,4 +513,43 @@ footer{
 
 .icon {
   filter: grayscale(100%) brightness(0);
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px){
+
+    .mainbox{
+        width: 95%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    #display{
+        height: 80px;
+        font-size: 1.8rem;
+    }
+
+    .buttons{
+        gap: 10px;
+    }
+
+    .buttons button{
+        font-size: 1.1rem;
+    }
+
+    .sidebar1{
+        width: 85%;
+    }
+     .sidebar{
+        width: 70%;
+    }
+
 }
