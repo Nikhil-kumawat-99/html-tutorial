@@ -24,6 +24,11 @@
     overflow-x: hidden;
     /* padding: 10px; */
 }
+.light-theme {
+    background: #c5c3c3f0;
+    background-size: cover;
+    background-position: center;
+}
 
 
 .navbar{
@@ -37,14 +42,14 @@
 
 .history{
     z-index: 1998;
-    margin-top: -10px;
-    margin-right: 30px;
+    margin-top: -15px;
+    margin-right: 15px;
     /* background-color: #22223b; */
      background:   rgb(84, 91, 92);
     background-image: url("history\ icon.svg");
     background-size: cover;
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     border-radius: 30%;
     border-radius: solid white 5px;
     position: fixed;
@@ -53,6 +58,7 @@
     /* transform: translateY(-50%); */
     cursor:pointer;
     transition:0.5s;
+    color: aliceblue;
 
 
 }
@@ -69,20 +75,21 @@
 /* menue button */
 .menu{
     z-index: 1500;
-    margin-top: -10px;
-    margin-left: 30px;
+    margin-top: -15px;
+    margin-left: 15px;
     /* background-color: #22223b; */
      background:   rgb(84, 91, 92);
     background-image: url("menu.svg");
     background-size: cover;
-    width:50px;
-    height:50px;
+    width:40px;
+    height:40px;
     border-radius: 30%;
     border-radius: solid white 5px;
     position: fixed;
     left: 0;
     top: 5%;
     /* transform: translateY(-50%); */
+
 }
 .menu:active{
     transform :scale(1.1);
@@ -204,14 +211,15 @@
 } */
 .buttons button {
 
+  color: #ebedee;
   /* width: 100%; */
   width: 60px;
   height: 60px;
   
   padding: 10px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/2;
 
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 
   border-radius:20px;
 
@@ -256,12 +264,14 @@ button :active{
 #ca,
 #percentage{
   background: #f59e0b;
-  font-weight: bold;
+  /* font-weight: bold; */
+  color: #07070d;
 }
 
 #subtraction,
 #addition,
 #equal{
+  color: #07070d;
     /* background-color: #f59e0b; */
     font-size: 30px;
     /* font-weight: bold; */
@@ -328,6 +338,7 @@ footer{
 
 /* Notes panel (hidden by default) */
 .notes-panel {
+  position: relative;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
@@ -359,26 +370,49 @@ footer{
   width: 80px;
   height: 30px;
   border-radius: 10px;
-  background: rgba(255,255,255,0.1);
+  /* background-color: rgba(255,255,255,0.1); */
+  /* background: rgba(255,255,255,0.1); */
+  background: rgb(84, 91, 92);
+
   border: none;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1.1rem;
+  font-family: 'Courier New', Courier, monospace;
+  color:white;
 }
 
 .notes-btn:hover {
-  background: rgba(255,255,255,0.3);
+  background: rgba(30, 29, 29, 0.3);
   transform: scale(1.1);
+}
+
+
+#saveNotes{
+  padding: 2px;
+  font-size: 1rem;
+  font-family:'Courier New', Courier, monospace;
+  bottom: 10px;
+  position: absolute;
+  right: 10px;
+  color: #e2e8f0;
+  background: #0f172a;
+  border: solid rgb(84, 91, 92) 1px;
+  border-radius: 20%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
 }
 
 
 
 /* sidebar */
 .sidebar{
-  align-items: right;
+    align-items: right;
     top:0px;
-    left:-300px;
+    left:-350px;
     position:fixed;
-    width:250px;
+    width: 200px;
     height:100%;
     background-color:rgba(255,255,255,0.4);
 
@@ -468,6 +502,11 @@ footer{
     color: #e2e8f0;
 }
 
+.light-sidebar1{
+    background: white;
+    color:black;
+}
+
 .sidebar1.active{
     right:0;
 }
@@ -497,7 +536,7 @@ footer{
     bottom: 50px;
     position:absolute;
     right: 20px;
-    color: rgb(26, 26, 26);
+    color: white;
     background-color: rgb(84, 91, 92) ;
     background-size: cover;
     width: 100px;
@@ -508,6 +547,9 @@ footer{
     cursor: pointer;
     transition: all 0.2s ease;
   }
+
+
+
 
 
 
@@ -552,4 +594,31 @@ footer{
         width: 70%;
     }
 
+}
+
+
+
+#smartPage{
+    margin-top: 80px;
+    margin-left: 50px;
+    display:none;
+    /* width: 100%; */
+    width: 500px;
+
+    height: 650px;
+
+    text-align: center;
+
+    background-color:rgba(255,255,255,0.1);
+
+    border: solid rgb(84, 91, 92) 2px;
+    border-radius:25px;
+
+    box-shadow: 0 0 6px rgba(255,255,255,0.5);
+
+    backdrop-filter: blur(10px);
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    padding: 20px;
 }

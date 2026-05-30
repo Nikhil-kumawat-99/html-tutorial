@@ -49,8 +49,8 @@
                           <span class="icon">📝</span> Notes
                         </li>
 
-                    <li onclick="clearHistory()">
-                           <span class="icon">🗑</span> Clear All
+                    <li onclick="toggleHistory()">
+                           <span class="icon">🗑</span> Clear History
                         </li>
 
                     <li onclick="toggleTheme()">
@@ -64,14 +64,15 @@
         </div>  
 
         
-        
+
+ <div id="homePage">
     <div class="mainbox">
 
         <div class="calculator"> 
              <input type="text" id="display" readonly />
 
                <div class="buttons">
-                         <button id="clear" onclick="backspace()">.</button>
+                         <button id="clear" onclick="backspace()"></button>
                          <button id="ca" onclick="clearDisplay()">AC</button>
                          <button id="percentage" onclick="press('%')">%</button>
                          <button id="divide"  onclick="press('/')">÷</button>
@@ -105,14 +106,24 @@
                    <button class="notes-btn" onclick="toggleNotes()">notes</button>
                          <div class="notes-panel" id="notesPanel">
                                <textarea placeholder="Write your notes here..."></textarea>
+                               <button id="saveNotes" onclick="saveNotes()">save</button>
                          </div>
 
 
         </div>
 
     </div>
+</div>
 
 
+
+   <div id="smartPage">
+      <input type="text" id="display" readonly />
+        <div class="buttons1">
+            
+        </div>
+
+   </div>
 
            
  </header>

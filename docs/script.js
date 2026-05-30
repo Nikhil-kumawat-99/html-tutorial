@@ -58,6 +58,13 @@ function toggleMenu() {
 }
 
 
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("light-theme");
+    document.querySelector(".sidebar1").classList.toggle("light-slidebar1");
+}
+
+
 function toggleHistory() {
     const sidebar1 = document.getElementById("sidebar1");
     const overlay1 = document.getElementById("overlay1");
@@ -106,3 +113,15 @@ function toggleHistory() {
         history=[];
         updateHistory();
     }
+
+
+    function sic_fic(){
+        document.getElementById("homePage").style.display="none";
+        document.getElementById("smartPage").style.display="block";
+    }
+
+    function goHome(){
+        document.getElementById("homePage").style.display="block";
+        document.getElementById("smartPage").style.display="none";
+    }
+    
