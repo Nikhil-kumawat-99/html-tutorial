@@ -148,15 +148,63 @@ function toggleHistory() {
         display1.value=display1.value.slice(0,-1);
     }
 
+
+
+    let history2=[];
+
     function calculate1(){
         playSound1();
         
         try{
             display1.value= Number(eval(display1.value)).toFixed(10);
+
+            
         }
         catch{
             display1.value="Error..!";
         }       
+    }
+
+
+
+ // history
+    let history1=[];
+
+    function calculate1(){
+        playSound1();
+        try{
+            let expression=display1.value;
+            let result = Number(eval(expression).toFixed(10));
+            display1.value=result;
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
+    }
+
+    
+    function saveHistory1( expression , result){
+        history1.push( expression + "=" + result);
+        updateHistory1();
+    }
+
+
+    function updateHistory1(){
+        const historylist= document.getElementById("historyList");
+        historylist.innerHTML="";
+        for(let i=0; i<history1.length; i++){
+            const li= document.createElement("li");
+            li.textContent=history1[i];
+            historylist.appendChild(li);
+        }
+    }
+  
+
+    function clearHistory(){
+        history1=[];
+        updateHistory1();
     }
 
 
@@ -184,6 +232,15 @@ function toggleHistory() {
                      }
             display1.value= num + "! = " + fact;
             }
+        try{
+            let expression=display1.value;
+            let result="";
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
     
     }
 
@@ -197,33 +254,69 @@ function toggleHistory() {
 
     function pi(){
         playSound();
-        display1.value=Math.PI;
+        display1.value+=Math.PI;
       }
 
     function eluar(){
         playSound();
-        display1.value=Math.E;
+        display1.value+=Math.E;
      }
 
     function sqrt(){
         playSound1();
         display1.value= "√" + display1.value + " = " + Math.sqrt(display1.value);
+        try{
+            let expression=display1.value;
+            let result="";
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
     }
 
     function cbrt(){
         playSound1();
         display1.value= "∛" + display1.value + " = " + Math.cbrt(display1.value);
+        try{
+            let expression=display1.value;
+            let result="";
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
     }
 
     function log(){
         playSound1();
         display1.value= "log" + display1.value + " = " + Math.log10(display1.value);
+         try{
+            let expression=display1.value;
+            let result="";
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
     }
 
 
     function ln(){
         playSound1();
         display1.value= "ln" + display1.value + " = " + Math.log(display1.value);
+        try{
+            let expression=display1.value;
+            let result="";
+            saveHistory1( expression , result );
+            saveHistory( expression , result );
+        }
+        catch{
+            display1.value="Error..!";
+        }
     }
 
 

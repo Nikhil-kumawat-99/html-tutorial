@@ -133,8 +133,8 @@
 
     padding: 20px;
 
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px; */
+    /* margin-right: 20px; */
 }
 
 
@@ -645,11 +645,11 @@ footer{
 #smartPage{
     margin-top: 80px;
     margin-bottom: 20px;
-    /* margin-left: 80px; */
-    /* margin-right:15px; */
+    /* margin-left: 10px; */
+    /* margin-right:10px; */
 
     width: 100%;
-    max-width: 450px;
+    max-width: 420px;
 
     min-height: 650px;
 
