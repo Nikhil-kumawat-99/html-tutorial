@@ -36,30 +36,30 @@
                <button class="menu" onclick="toggleMenu()"></button>
             <div class="sidebar" id="sidebar">
                 <ul class="list" >
-                   <li onclick="goHome()">
+                   <li onclick="goHome(); toggleMenu()">
                          <span class="icon">🏠</span> Home
                         </li>
-                   <li onclick="sic_fic()">
-                         <span class="icon">📱</span> Smart Cal
+                   <li onclick="sic_fic(); toggleMenu()">
+                         <span class="icon">📱</span> Scientific
                         </li>
-                   <li onclick="convertor()">
+                   <li onclick="convertor(); toggleMenu()">
                          <span class="icon">⇄</span> Convertor
                         </li>
-                    <li onclick="toggleNotes()">
+                    <li onclick="toggleNotes(); toggleMenu()">
                           <span class="icon">📝</span> Notes
                         </li>
 
-                    <li onclick="toggleHistory()">
-                           <span class="icon">🗑</span> Clear History
+                    <li onclick="toggleHistory(); toggleMenu()">
+                           <span class="icon">🗑</span> History
                         </li>
 
-                    <li onclick="toggleTheme()">
+                    <li onclick="toggleTheme(); toggleMenu()">
                              <span class="icon">🎨</span> Theme
                          </li>
                 </ul>
             </div>
                 
-            <div class="overlay" id="overlay" onclick="toggleMenu" ></div>  
+            <div class="overlay" id="overlay" onclick="toggleMenu()" ></div>  
 
         </div>  
 
@@ -118,8 +118,61 @@
 
 
    <div id="smartPage">
-      <input type="text" id="display" readonly />
+      <input type="text" id="display1" readonly />
         <div class="buttons1">
+                         <button id="pi" onclick="pi()">π</button>
+                         <button id="openbracket" onclick="press1('(')">(</button>
+                         <button id="closebracket" onclick="press1(')')">)</button>
+                         <button id="ca" onclick="clearDisplay1()">AC</button>
+                         <button id="clear" onclick="backspace1()"></button>
+
+
+                        
+                        <button id="eluar" onclick="eluar()">e</button>
+                        <button id="sin" onclick="addTrig('sin')">sin</button>
+                        <button id="cos" onclick="addTrig('cos')">cos</button>
+                        <button id="tan" onclick="addTrig('tan')">tan</button>
+                        <button id="divide"  onclick="press1('/')">÷</button>
+
+
+                        <button id="factorial" onclick="factorial()">n!</button>
+                        <button id="asin" onclick="addTrig('asin')">sin⁻¹</button>
+                        <button id="acos" onclick="addTrig('acos')">cos⁻¹</button>
+                        <button id="atan" onclick="addTrig('atan')">tan⁻¹</button>
+                        <button id="multiplication"  onclick="press1('*')">x</button>
+                    
+
+
+                        <button id="sqrt" onclick="sqrt()">√x</button>
+                        <button onclick="press1('7')">7</button>
+                        <button onclick="press1('8')">8</button>
+                        <button onclick="press1('9')">9</button>    
+                        <button  id="subtraction" onclick="press1('-')">-</button>
+                        
+
+                        <button id="cbrt" onclick="cbrt()">∛x</button>
+                        <button onclick="press1('4')">4</button>
+                        <button onclick="press1('5')">5</button>
+                        <button onclick="press1('6')">6</button>
+                         <button id="addition" onclick="press1('+')">+</button>
+                        
+
+                        <button id="log" onclick="log()">log</button>
+                        <button onclick="press1('1')">1</button>
+                        <button onclick="press1('2')">2</button>
+                        <button onclick="press1('3')">3</button>
+                        <button id="percentage" onclick="press1('%')">%</button>
+                        
+
+                        <button id="ln" onclick="ln()">ln</button>
+                        <button onclick="sign1()">+/-</button>
+                        <button onclick="press1('0')">0</button>     
+                        <button onclick="press1('.')">.</button>
+                        <button id="equal" onclick="calculate1()">=</button>
+
+
+                        
+
             
         </div>
 

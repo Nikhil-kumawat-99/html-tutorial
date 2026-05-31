@@ -125,3 +125,142 @@ function toggleHistory() {
         document.getElementById("smartPage").style.display="none";
     }
     
+
+
+
+
+// Script  for scientific calculator
+
+    let display1=document.getElementById("display1");
+
+    function press1(value){
+        playSound();
+        display1.value+=value;
+    }
+
+    function clearDisplay1(){
+        playSound();
+        display1.value="";
+    }
+
+    function backspace1(){
+        playSound();
+        display1.value=display1.value.slice(0,-1);
+    }
+
+    function calculate1(){
+        playSound1();
+        
+        try{
+            display1.value= Number(eval(display1.value)).toFixed(10);
+        }
+        catch{
+            display1.value="Error..!";
+        }       
+    }
+
+
+    function sign1(){
+          playSound();
+             if(display1.value){
+             display1.value= -display1.value;
+             }
+   }
+
+
+    function factorial(){
+          playSound1();
+          let num= parseInt(display1.value);
+          if(num<0){
+                 display1.value="Error..!";
+             }
+         else if(num===0 || num===1){
+                  display1.value=1;
+            }
+         else{
+                   let fact=1;
+                for(let i=2; i<=num; i++){
+                    fact*=i;
+                     }
+            display1.value= num + "! = " + fact;
+            }
+    
+    }
+
+
+    function addTrig(func){
+        playSound();
+        display1.value+= func + "(";
+    }
+
+
+
+    function pi(){
+        playSound();
+        display1.value=Math.PI;
+      }
+
+    function eluar(){
+        playSound();
+        display1.value=Math.E;
+     }
+
+    function sqrt(){
+        playSound1();
+        display1.value= "√" + display1.value + " = " + Math.sqrt(display1.value);
+    }
+
+    function cbrt(){
+        playSound1();
+        display1.value= "∛" + display1.value + " = " + Math.cbrt(display1.value);
+    }
+
+    function log(){
+        playSound1();
+        display1.value= "log" + display1.value + " = " + Math.log10(display1.value);
+    }
+
+
+    function ln(){
+        playSound1();
+        display1.value= "ln" + display1.value + " = " + Math.log(display1.value);
+    }
+
+
+
+
+
+    function sin(x){
+        playSound();
+        return Math.sin(x * Math.PI / 180);
+    }
+
+    function cos(x){
+        playSound();
+        return Math.cos(x * Math.PI / 180);
+    }                   
+
+    function tan(x){
+        playSound();
+        return Math.tan(x * Math.PI / 180);
+    }
+
+
+    function asin(x){
+        playSound();
+        return Math.asin(x) * 180 / Math.PI;
+    }
+
+    function acos(x){
+        playSound();
+        return Math.acos(x) * 180 / Math.PI;
+    }
+
+    function atan(x){
+        playSound();
+        return Math.atan(x) * 180 / Math.PI;
+    }
+
+
+
+

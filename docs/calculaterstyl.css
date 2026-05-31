@@ -132,6 +132,9 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     padding: 20px;
+
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 
@@ -149,7 +152,7 @@
 
 } */
 
-#display{
+#display, #display1{
     width: 100%;
     height: 90px;
 
@@ -171,6 +174,15 @@
     
     box-shadow: inset 2px 2px 10px rgba(0,0,0,0.6);
 }
+
+#display1{
+    margin-top: 10px;
+    height: 90px;
+    font-size: 1.5rem;
+}
+
+
+
 .buttons{
     display: grid;
 
@@ -182,6 +194,20 @@
     align-items: center;
      justify-items: center;
      padding: 15px;
+}
+
+
+.buttons1{
+    display: grid;
+
+    grid-template-columns: repeat(5,1fr);
+
+    gap: 10px;
+
+    margin-top:20px;
+    align-items: center;
+    justify-items: center;
+    padding: 5px;
 }
 
 
@@ -209,7 +235,7 @@
               -2px -2px 6px rgba(255,255,255,0.05);
 
 } */
-.buttons button {
+.buttons button, .buttons1 button {
 
   color: #ebedee;
   /* width: 100%; */
@@ -238,6 +264,12 @@
 }
 
 
+.buttons1 button{
+  font-size: 1.1rem;
+  padding: 8px;
+  aspect-ratio: 1/1;
+}
+
 
 
 button:hover{
@@ -257,7 +289,7 @@ button :active{
 
 
 
-#multiplication,
+#multiplication,#phi,#closebracket,#openbracket,
 #subtraction,
 #addition,
 #divide ,
@@ -289,13 +321,19 @@ button :active{
 }
 
 
+#eluar,#sin,#cos,#tan,#log,#ln,#sqrt,#cbrt,#factorial,#acos,#asin,#atan{
+  background: #4e4e54;
+  color: #ebedee;
+}
 
 
 
 
 
 
-.mainbox {
+
+
+.mainbox,#smartpage {
   animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -579,12 +617,18 @@ footer{
         font-size: 1.8rem;
     }
 
+   
+
     .buttons{
         gap: 10px;
     }
 
     .buttons button{
         font-size: 1.1rem;
+    }
+
+    .buttons1{
+        gap: 5px;
     }
 
     .sidebar1{
@@ -600,10 +644,12 @@ footer{
 
 #smartPage{
     margin-top: 80px;
-    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-right:15px;
     display:none;
     /* width: 100%; */
-    width: 500px;
+    width: 450px;
 
     height: 650px;
 
