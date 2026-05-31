@@ -645,13 +645,19 @@ footer{
 #smartPage{
     margin-top: 80px;
     margin-bottom: 20px;
-    margin-left: 80px;
-    margin-right:15px;
+    /* margin-left: 80px; */
+    /* margin-right:15px; */
+
+    width: 100%;
+    max-width: 450px;
+
+    min-height: 650px;
+
     display:none;
     /* width: 100%; */
-    width: 450px;
+    /* width: 450px;
 
-    height: 650px;
+    height: 650px; */
 
     text-align: center;
 
