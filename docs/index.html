@@ -20,6 +20,7 @@
 
                     <div class="sidebar1" id="sidebar1">
                           <h2>History</h2>
+                          <br>
                           
                           <ul id="historyList"></ul>
 
@@ -42,8 +43,8 @@
                    <li onclick="sic_fic(); toggleMenu()">
                          <span class="icon">📱</span> Scientific
                         </li>
-                   <li onclick="convertor(); toggleMenu()">
-                         <span class="icon">⇄</span> Convertor
+                   <li onclick="converter(); toggleMenu()">
+                         <span class="icon">⇄</span> Converter
                         </li>
                     <li onclick="toggleNotes(); toggleMenu()">
                           <span class="icon">📝</span> Notes
@@ -117,7 +118,7 @@
 
 
 
-   <div id="smartPage">
+   <div id="smartPage" style="display:none;">
       <input type="text" id="display1" readonly />
         <div class="buttons1">
                          <button id="pi" onclick="pi()">π</button>
@@ -129,42 +130,42 @@
 
                         
                         <button id="eluar" onclick="eluar()">e</button>
-                        <button id="sin" onclick="addTrig('sin')">sin</button>
-                        <button id="cos" onclick="addTrig('cos')">cos</button>
-                        <button id="tan" onclick="addTrig('tan')">tan</button>
+                        <button id="sin" onclick="addValue('sin')">sin</button>
+                        <button id="cos" onclick="addValue('cos')">cos</button>
+                        <button id="tan" onclick="addValue('tan')">tan</button>
                         <button id="divide"  onclick="press1('/')">÷</button>
 
 
                         <button id="factorial" onclick="factorial()">n!</button>
-                        <button id="asin" onclick="addTrig('asin')">sin⁻¹</button>
-                        <button id="acos" onclick="addTrig('acos')">cos⁻¹</button>
-                        <button id="atan" onclick="addTrig('atan')">tan⁻¹</button>
+                        <button id="asin" onclick="addValue('asin')">sin⁻¹</button>
+                        <button id="acos" onclick="addValue('acos')">cos⁻¹</button>
+                        <button id="atan" onclick="addValue('atan')">tan⁻¹</button>
                         <button id="multiplication"  onclick="press1('*')">x</button>
                     
 
 
-                        <button id="sqrt" onclick="sqrt()">√x</button>
+                        <button id="sqrt" onclick="addValue('sqrt')">√x</button>
                         <button onclick="press1('7')">7</button>
                         <button onclick="press1('8')">8</button>
                         <button onclick="press1('9')">9</button>    
                         <button  id="subtraction" onclick="press1('-')">-</button>
                         
 
-                        <button id="cbrt" onclick="cbrt()">∛x</button>
+                        <button id="cbrt" onclick="addValue('cbrt')">∛x</button>
                         <button onclick="press1('4')">4</button>
                         <button onclick="press1('5')">5</button>
                         <button onclick="press1('6')">6</button>
                          <button id="addition" onclick="press1('+')">+</button>
                         
 
-                        <button id="log" onclick="log()">log</button>
+                        <button id="log" onclick="addValue('log')">log</button>
                         <button onclick="press1('1')">1</button>
                         <button onclick="press1('2')">2</button>
                         <button onclick="press1('3')">3</button>
                         <button id="percentage" onclick="press1('%')">%</button>
                         
 
-                        <button id="ln" onclick="ln()">ln</button>
+                        <button id="ln" onclick="addValue('ln')">ln</button>
                         <button onclick="sign1()">+/-</button>
                         <button onclick="press1('0')">0</button>     
                         <button onclick="press1('.')">.</button>
@@ -177,6 +178,44 @@
         </div>
 
    </div>
+
+
+
+   <div id="converterPage" style="display:none;">
+        <div class="converter">
+            <select id="conversionType" onchange="updateUnits()">
+                <option id="option" value="">Select Conversion Type</option>
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+            </select>
+
+            <div id="unitSelection">
+                <input type="number" id="inputValue" placeholder="Enter value">
+                <select id="fromUnit">
+                    <option value="">Units</option>
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>        
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+            
+                </select>
+                <span>to</span>
+                <div id="result1"></div>
+                <select id="toUnit">
+                    <option value="">Units</option>
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>        
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+                </select>
+                <br>
+                <button onclick="convert()">Convert</button>
+            </div>
+
+            <div id="result"></div>
+        </div>
+   </div>    
 
            
  </header>

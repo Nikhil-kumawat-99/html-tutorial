@@ -61,8 +61,33 @@ function toggleMenu() {
 function toggleTheme() {
     const body = document.body;
     body.classList.toggle("light-theme");
-    document.querySelector(".sidebar1").classList.toggle("light-slidebar1");
+    
 }
+
+
+function hideallpages(){
+    document.getElementById("homePage").style.display="none";
+    document.getElementById("smartPage").style.display="none";
+    document.getElementById("converterPage").style.display="none";
+}
+
+function sic_fic(){
+        hideallpages();
+        document.getElementById("smartPage").style.display="block";
+    }
+
+function goHome(){
+        hideallpages();
+        document.getElementById("homePage").style.display="block";
+    }
+
+function converter(){
+        hideallpages();
+        document.getElementById("converterPage").style.display="block";
+    }    
+
+
+
 
 
 function toggleHistory() {
@@ -115,15 +140,7 @@ function toggleHistory() {
     }
 
 
-    function sic_fic(){
-        document.getElementById("homePage").style.display="none";
-        document.getElementById("smartPage").style.display="block";
-    }
-
-    function goHome(){
-        document.getElementById("homePage").style.display="block";
-        document.getElementById("smartPage").style.display="none";
-    }
+   
     
 
 
@@ -150,7 +167,6 @@ function toggleHistory() {
 
 
 
-    let history2=[];
 
     function calculate1(){
         playSound1();
@@ -245,11 +261,7 @@ function toggleHistory() {
     }
 
 
-    function addTrig(func){
-        playSound();
-        display1.value+= func + "(";
-    }
-
+   
 
 
     function pi(){
@@ -262,65 +274,36 @@ function toggleHistory() {
         display1.value+=Math.E;
      }
 
-    function sqrt(){
+
+     function addValue(func){
+        playSound();
+        display1.value+= func + "(";
+     }
+
+    function sqrt(x){
         playSound1();
-        display1.value= "√" + display1.value + " = " + Math.sqrt(display1.value);
-        try{
-            let expression=display1.value;
-            let result="";
-            saveHistory1( expression , result );
-            saveHistory( expression , result );
-        }
-        catch{
-            display1.value="Error..!";
-        }
+        return Math.sqrt(x);
+       
     }
 
-    function cbrt(){
+    function cbrt(x){
         playSound1();
-        display1.value= "∛" + display1.value + " = " + Math.cbrt(display1.value);
-        try{
-            let expression=display1.value;
-            let result="";
-            saveHistory1( expression , result );
-            saveHistory( expression , result );
-        }
-        catch{
-            display1.value="Error..!";
-        }
+        return Math.cbrt(x);
+        
     }
 
-    function log(){
+    function log(x){
         playSound1();
-        display1.value= "log" + display1.value + " = " + Math.log10(display1.value);
-         try{
-            let expression=display1.value;
-            let result="";
-            saveHistory1( expression , result );
-            saveHistory( expression , result );
-        }
-        catch{
-            display1.value="Error..!";
-        }
+        return Math.log10(x);
+       
     }
 
 
-    function ln(){
+    function ln(x){
         playSound1();
-        display1.value= "ln" + display1.value + " = " + Math.log(display1.value);
-        try{
-            let expression=display1.value;
-            let result="";
-            saveHistory1( expression , result );
-            saveHistory( expression , result );
-        }
-        catch{
-            display1.value="Error..!";
-        }
+        return Math.log(x);
+       
     }
-
-
-
 
 
     function sin(x){
