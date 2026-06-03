@@ -182,6 +182,9 @@
 
 
    <div id="converterPage" style="display:none;">
+        <div id="converterheader">
+            <h4>Unit Converter</h4>
+        </div>
         <div class="converter">
             <select id="conversionType" onchange="updateUnits()">
                 <option id="option" value="">Select Conversion Type</option>
@@ -208,7 +211,7 @@
 
                 <span>To</span>
                 <div class="row">
-                      <input type="text" id="outputValue"  readonly value="loading result...">
+                      <input type="text" id="outputValue"  readonly value="">
 
                     <select id="toUnit">
                            <!-- <option value="">Units</option> -->
@@ -223,7 +226,7 @@
                 <button  class="exchange">Convert</button>
             </div>
 
-            <div id="result"></div>
+            <!-- <div id="result"></div> -->
         </div>
    </div>    
 

@@ -32,13 +32,21 @@
     background-position: center;     
 }
 
-body.light-theme .mainbox ,body.light-theme #smartPage{
+body.light-theme .mainbox ,body.light-theme #smartPage, body.light-theme #converterPage{
     background: rgba(200, 195, 195, 0.089);
     /* border: solid rgb(84, 91, 92) 2px; */
     /* box-shadow: 0 0 50px rgba(255, 255, 255, 0.125); */
     box-shadow: 0 0 50px rgba(19, 0, 0, 0.547);
 
   }
+
+body.light-theme #converterPage{
+    background: rgba(200, 195, 195, 0.89);
+    /* border: solid rgb(84, 91, 92) 2px; */
+    /* box-shadow: 0 0 50px rgba(255, 255, 255, 0.125); */
+    box-shadow: 0 0 50px rgba(19, 0, 0, 0.547);
+
+}  
 
 body.light-theme .sidebar1{
     background-color: rgba(255, 255, 255, 0.8);
@@ -702,11 +710,20 @@ footer{
 
 
 
-
+#converterheader{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(15, 15, 15);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
 
 #converterPage{
-    color: rgb(239, 235, 235);
+    color: rgb(9, 9, 9);
+    padding-top:10px;
     padding: 25px;
     width:400px;
     font-size: 1.3rem;
@@ -733,31 +750,15 @@ footer{
     margin-top: 12px;
     font-size: 1.2rem;
     border-radius: 10px;
-    border: solid rgb(207, 212, 213) 2px;
+    border:none;
+    /* border: solid rgb(207, 212, 213) 2px; */
     background-color: rgba(255,255,255,0.2);
     color: rgb(10, 10, 10);
-}
-
-/* #option{
-    padding: 10px;
-    font-size: 1.2rem;
-    background-color: rgba(255,255,255,0.1);
-    color: rgb(15, 14, 14);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.819),
+              -2px -2px 8px rgba(255,255,255,0.05);
 }
 
 
-input[type="number"]{
-    height: 60px;
-    align-items: center;
-    width: 73%;
-    padding: 8px;
-    margin-top: 20px;
-    font-size: 1.6rem;
-    border-radius: 5px;
-    border: solid rgb(84, 91, 92) 2px;
-    background-color: rgba(255,255,255,0.1);
-    color: black;
-} */
 
   #fromUnit{
     margin-top: -5px;
@@ -776,6 +777,7 @@ input[type="number"]{
     padding: 5px;
     font-size: 0.8rem;
     border-radius: 5px;
+    border: solid rgb(84, 91, 92) 2px;
     background-color:  rgba(163, 160, 160, 0.777);
     color: rgb(15, 14, 14);
 }
@@ -804,6 +806,8 @@ input[type="number"]{
     font-size: 1.3rem;
     background: rgba(23, 21, 21, 0.55);
     color: rgb(239, 235, 235);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.819),
+              -2px -2px 8px rgba(255,255,255,0.05);
 }
 
 /* SELECT BOX */
@@ -815,9 +819,34 @@ input[type="number"]{
     border-radius: 10px;
     padding: 5px;
     font-size: 15px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.819),
+              -2px -2px 8px rgba(255,255,255,0.05);
 }
 
 /* PLACEHOLDER */
 input::placeholder{
     color: #d5d2d2;
+}
+
+
+.exchange{
+    height:50px;
+    width:100%;
+    background-color: rgb(84, 91, 92);
+    color: #0a0a0a;
+    font: 100% Arial, Helvetica, sans-serif;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.819),
+              -2px -2px 8px rgba(255,255,255,0.05);
+    
+
+}
+
+.exchange:hover{
+    background-color: #7c7d7f;
+    /* transform: scale(1.05); */
+    border:none;
 }
