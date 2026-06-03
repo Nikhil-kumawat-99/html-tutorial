@@ -337,6 +337,45 @@ function toggleHistory() {
         return Math.atan(x) * 180 / Math.PI;
     }
 
+    const alpha=document.querySelector("#fromUnit");
+    const beta=document.querySelector("#toUnit");
+    const gamma=document.querySelector(".convert");
+    let from=alpha.value;
+    let to=beta.value;
 
+    // alpha.addEventListener("change",(e)=>{
+    //    from=e.target.value;
+    //    console.log(from);
+    // });
+    // beta.addEventListener("change",(e)=>{
+    //     to=e.target.value;
+    //     console.log(to);
+    // });
 
+    // console.log(to);
+        alpha.addEventListener("change",(e)=>{
+            alph(e.target);
+        });
+        beta.addEventListener("change",(e)=>{
+            bet(e.target);
+        });
 
+    function alph(event){
+        from=event.value;
+    }
+    function bet(event){
+        to=event.value;
+    }
+
+    const enter=document.querySelector("#inputValue");
+    const res=document.querySelector(".exchange");
+    const resul=document.querySelector("#outputValue");
+    (async function(){
+        res.addEventListener("click",async()=>{
+            const url=`https://api.unitconvr.com/v1/convert?from=${from}&to=${to}&value=${enter.value}&category=length`;
+            const response=await fetch(url);
+            const data=await response.json();
+            let text=data.result;
+            resul.value=`${enter.value} ${from} = ${text} ${to}`;
+        });
+    })();

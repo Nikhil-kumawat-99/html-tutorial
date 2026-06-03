@@ -43,7 +43,7 @@
                    <li onclick="sic_fic(); toggleMenu()">
                          <span class="icon">📱</span> Scientific
                         </li>
-                   <li onclick="converter(); toggleMenu()">
+                   <li class="convert" onclick="converter(); toggleMenu()">
                          <span class="icon">⇄</span> Converter
                         </li>
                     <li onclick="toggleNotes(); toggleMenu()">
@@ -191,26 +191,36 @@
             </select>
 
             <div id="unitSelection">
-                <input type="number" id="inputValue" placeholder="Enter value">
-                <select id="fromUnit">
-                    <option value="">Units</option>
-                    <option value="meter">Meter</option>
+                  <span>From</span>
+
+                <div class="row">
+                      <input type="number" id="inputValue" placeholder="Enter value" value="100">
+                  <select id="fromUnit">
+                    <!-- <option value="">Units</option> -->
+                    <option value="meter" selected>Meter</option>
                     <option value="kilometer">Kilometer</option>        
                     <option value="mile">Mile</option>
                     <option value="foot">Foot</option>
             
-                </select>
-                <span>to</span>
-                <div id="result1"></div>
-                <select id="toUnit">
-                    <option value="">Units</option>
-                    <option value="meter">Meter</option>
-                    <option value="kilometer">Kilometer</option>        
-                    <option value="mile">Mile</option>
-                    <option value="foot">Foot</option>
-                </select>
-                <br>
-                <button onclick="convert()">Convert</button>
+                  </select>
+                </div>
+
+
+                <span>To</span>
+                <div class="row">
+                      <input type="text" id="outputValue"  readonly value="loading result...">
+
+                    <select id="toUnit">
+                           <!-- <option value="">Units</option> -->
+                           <option value="meter" selected>Meter</option>
+                           <option value="kilometer">Kilometer</option>        
+                           <option value="mile">Mile</option>
+                           <option value="foot">Foot</option>
+                    </select>
+                </div>
+                
+
+                <button  class="exchange">Convert</button>
             </div>
 
             <div id="result"></div>
@@ -221,7 +231,7 @@
  </header>
 
 
-   <script src="script.js"></script>
+   <script src="script.js" defer></script>
    
 </body>
 </html>
