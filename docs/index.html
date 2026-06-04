@@ -186,11 +186,20 @@
             <h4>Unit Converter</h4>
         </div>
         <div class="converter">
-            <select id="conversionType" onchange="updateUnits()">
-                <option id="option" value="">Select Conversion Type</option>
+            <select id="conversionType">
+                <!-- <option id="option" value="">Select Conversion Type</option> -->
+                <option value="none" selected>Quantity</option>
                 <option value="length">Length</option>
+
                 <option value="weight">Weight</option>
                 <option value="temperature">Temperature</option>
+                <!-- <option value="time">Time</option>  -->
+                <option value="area">Area</option>
+                <option value="volume">Volume</option>
+                <!-- <option value="speed">Speed</option>s -->
+
+
+
             </select>
 
             <div id="unitSelection">
@@ -199,11 +208,12 @@
                 <div class="row">
                       <input type="number" id="inputValue" placeholder="Enter value" value="100">
                   <select id="fromUnit">
+                <option value="none" selected>from</option>
                     <!-- <option value="">Units</option> -->
-                    <option value="meter" selected>Meter</option>
+                    <!-- <option value="meter" selected>Meter</option>
                     <option value="kilometer">Kilometer</option>        
                     <option value="mile">Mile</option>
-                    <option value="foot">Foot</option>
+                    <option value="foot">Foot</option> -->
             
                   </select>
                 </div>
@@ -214,11 +224,12 @@
                       <input type="text" id="outputValue"  readonly value="">
 
                     <select id="toUnit">
+                        <option value="none" selected>to</option>
                            <!-- <option value="">Units</option> -->
-                           <option value="meter" selected>Meter</option>
+                           <!-- <option value="meter" selected>Meter</option>
                            <option value="kilometer">Kilometer</option>        
                            <option value="mile">Mile</option>
-                           <option value="foot">Foot</option>
+                           <option value="foot">Foot</option> -->
                     </select>
                 </div>
                 
@@ -233,7 +244,7 @@
            
  </header>
 
-
+   <script src="option.js"></script>
    <script src="script.js" defer></script>
    
 </body>

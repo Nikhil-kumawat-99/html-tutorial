@@ -337,13 +337,67 @@ function toggleHistory() {
         return Math.atan(x) * 180 / Math.PI;
     }
 
+
+
+
+
+//    converter page script
+
+
+
     const alpha=document.querySelector("#fromUnit");
     const beta=document.querySelector("#toUnit");
     const gamma=document.querySelector(".convert");
+    const delta=document.querySelector("#conversionType");
+
+
+    delta.addEventListener("change",(e)=>{
+        change(e.target);
+    });
+
+    function change(event){
+        let obj;
+        if(event.value==="weight"){
+         obj=weight;
+        }
+        if(event.value==="length"){
+         obj=length;
+        }
+        if(event.value==="time"){
+         obj=time;
+        }
+        if(event.value==="area"){
+         obj=area;
+        }
+        if(event.value==="temperature"){
+         obj=temperature;
+        }
+        if(event.value==="volume"){
+         obj=volume;
+        }
+        if(event.value==="speed"){
+            obj=speed;
+        }
+        alpha.innerHTML="";
+        beta.innerHTML="";
+        for(let val in obj){
+            let option1=document.createElement("option");
+            option1.value=val;
+            option1.textContent=val;
+            alpha.append(option1);
+            let option2=document.createElement("option");
+            option2.value=val;
+            option2.textContent=val;
+            beta.append(option2);
+        }
+    }
+
+
     let from=alpha.value;
     let to=beta.value;
+    let conversionType=delta.value;
 
-    // alpha.addEventListener("change",(e)=>{
+     // alpha.addEventListener("change",(e)=>{
     //    from=e.target.value;
     //    console.log(from);
     // });
@@ -353,6 +407,8 @@ function toggleHistory() {
     // });
 
     // console.log(to);
+
+
         alpha.addEventListener("change",(e)=>{
             alph(e.target);
         });
@@ -370,12 +426,38 @@ function toggleHistory() {
     const enter=document.querySelector("#inputValue");
     const res=document.querySelector(".exchange");
     const resul=document.querySelector("#outputValue");
+    const inn=document.querySelector("#conversionType");
+
     (async function(){
         res.addEventListener("click",async()=>{
-            const url=`https://api.unitconvr.com/v1/convert?from=${from}&to=${to}&value=${enter.value}&category=length`;
+            const url=`https://api.unitconvr.com/v1/convert?from=${from}&to=${to}&value=${enter.value}&category=${inn.value}`;
+            console.log(from);
+            
+            console.log(to);
+            
+            console.log(enter.value);
+            
+            console.log(inn.value);
             const response=await fetch(url);
             const data=await response.json();
+            console.log(data);
             let text=data.result;
-            resul.value=`${enter.value} ${from} = ${text} ${to}`;
+            resul.value=`${text}`;
         });
     })();
+
+    // delta.addEventListener("change",(e)=>{
+    //     change(e.target);
+    // });
+
+    // function change(event){
+    //     const obj=event.value;
+    //     for(let val of obj){
+    //         let option=document.createElement("option");
+    //         option.value=val;
+    //         option.textContent=val;
+    //         alpha.append(option);
+    //         beta.append(option);
+    //     }
+    // }
+   

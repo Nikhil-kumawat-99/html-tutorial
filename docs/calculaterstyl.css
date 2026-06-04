@@ -761,6 +761,8 @@ footer{
 
 
   #fromUnit{
+    width:10rem;
+
     margin-top: -5px;
     height:40px;
     padding: 5px;
@@ -772,6 +774,7 @@ footer{
 } 
 
 #toUnit{
+    width:10rem;
     margin-top: -5px;
     height: 40px;
     padding: 5px;
