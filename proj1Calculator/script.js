@@ -101,7 +101,7 @@ function toggleHistory() {
 
 
     // history
-    let history=[];
+    let history=JSON.parse(localStorage.getItem("myhistory") ) || [];
 
     function calculate(){
         playSound1();
@@ -116,7 +116,7 @@ function toggleHistory() {
         }
     }
 
-    
+
     function saveHistory( expression , result){
         history.push( expression + "=" + result);
         updateHistory();
@@ -131,11 +131,18 @@ function toggleHistory() {
             li.textContent=history[i];
             historylist.appendChild(li);
         }
+
+    
+        localStorage.setItem("myhistory", JSON.stringify(history));
     }
-  
+
 
     function clearHistory(){
         history=[];
+        updateHistory();
+    }
+
+    window.onload = function(){
         updateHistory();
     }
 
@@ -460,4 +467,22 @@ function toggleHistory() {
     //         beta.append(option);
     //     }
     // }
-   
+
+
+
+
+
+    // local storage for notes save/
+     
+function saveNotes(){
+    let noteText = document.getElementById("notes").value;
+    localStorage.setItem("MyNotes",noteText);
+    alert("Notes Saved Sucessfully..");
+}
+
+window.onload = function(){
+    let savenote= localStorage.getItem("MyNotes");
+    if(savenote){
+    document.getElementById("notes").value = savenotes;
+    }
+};
