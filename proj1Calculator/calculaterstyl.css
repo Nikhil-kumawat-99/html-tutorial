@@ -461,7 +461,9 @@ footer{
   bottom: 10px;
   position: absolute;
   right: 10px;
-  color: #e2e8f0;
+  /* color: #e2e8f0; */
+  color: #000307;
+
   background: #0f172a;
   border: solid rgb(84, 91, 92) 1px;
   border-radius: 20%;
