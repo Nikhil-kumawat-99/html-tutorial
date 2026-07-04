@@ -101,8 +101,7 @@ function toggleHistory() {
 
 
     // history
-    let history=JSON.parse(localStorage.getItem("myhistory") ) || [];
-
+    let history=[] ;
     function calculate(){
         playSound1();
         try{
@@ -118,13 +117,18 @@ function toggleHistory() {
 
 
     function saveHistory( expression , result){
-        history.push( expression + "=" + result);
+        history.push( `${expression} = ${result}` );
+
         updateHistory();
     }
 
 
     function updateHistory(){
+
         const historylist= document.getElementById("historyList");
+        localStorage.setItem("calcHistory", JSON.stringify(history));
+        // console.log(history);
+        
         historylist.innerHTML="";
         for(let i=0; i<history.length; i++){
             const li= document.createElement("li");
@@ -132,18 +136,29 @@ function toggleHistory() {
             historylist.appendChild(li);
         }
 
-    
-        localStorage.setItem("myhistory", JSON.stringify(history));
+      
     }
+
+
+    window.addEventListener("load",  function() {
+        const savedHistory = localStorage.getItem("calcHistory"); 
+        if(savedHistory !==null){
+            history = JSON.parse(savedHistory);
+            updateHistory();
+        }
+
+    });
 
 
     function clearHistory(){
+        alert("History Cleared Successfully..!");
+        
         history=[];
-        updateHistory();
-    }
+        localStorage.removeItem("calcHistory");
 
-    window.onload = function(){
         updateHistory();
+        document.getElementById("historyList").innerHTML="";
+
     }
 
 
@@ -223,12 +238,7 @@ function toggleHistory() {
             historylist.appendChild(li);
         }
     }
-  
 
-    function clearHistory(){
-        history1=[];
-        updateHistory1();
-    }
 
 
     function sign1(){
@@ -475,7 +485,7 @@ function toggleHistory() {
     // local storage for notes save/
      
 function saveNotes(){
-    let noteText = document.getElementById("notesPanel").value;
+    let noteText = document.getElementById("notesTextarea").value;
     localStorage.setItem("MyNotes",noteText);
     alert("Notes Saved Sucessfully..");
 }
@@ -483,6 +493,6 @@ function saveNotes(){
 window.onload = function(){
     let savenote= localStorage.getItem("MyNotes");
     if(savenote){
-    document.getElementById("notesPanel").value = savenotes;
+    document.getElementById("notesTextarea").value = savenote;
     }
 };

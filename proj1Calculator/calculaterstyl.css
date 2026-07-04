@@ -855,3 +855,24 @@ input::placeholder{
     /* transform: scale(1.05); */
     border:none;
 }
+
+
+.social-icons {
+    bottom: 1.5rem;
+    position:absolute;
+    left: 1rem;
+    margin:1.2rem;
+    display: flex;
+     /* display: flex;
+    justify-content: center;
+     margin-left: 20px;  */
+}
+
+.social-icon {
+    /* background-size: cover; */
+    width: 30px;
+    height: 30px;
+    margin-right: 1.5rem;
+    /* text-decoration: none; */
+    color:#07070d
+}
