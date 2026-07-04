@@ -475,7 +475,7 @@ function toggleHistory() {
     // local storage for notes save/
      
 function saveNotes(){
-    let noteText = document.getElementById("notes").value;
+    let noteText = document.getElementById("notesPanel").value;
     localStorage.setItem("MyNotes",noteText);
     alert("Notes Saved Sucessfully..");
 }
@@ -483,6 +483,6 @@ function saveNotes(){
 window.onload = function(){
     let savenote= localStorage.getItem("MyNotes");
     if(savenote){
-    document.getElementById("notes").value = savenotes;
+    document.getElementById("notesPanel").value = savenotes;
     }
 };
